@@ -1,0 +1,265 @@
+:root {
+  --rtl-font: YekanBakh;
+}
+
+body {
+  font-family: var(--rtl-font);
+  direction: rtl;
+}
+
+.swiper {
+  img {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+
+@media(min-width: 576px) {
+  .blue-layer {
+    right: 0;
+    left: inherit;
+    //transform:translateY(50%) scaleX(1);
+  }
+}
+
+.carousel-caption {
+  left: 5%;
+  right: 10%;
+}
+
+.nav-wrap {
+  ul.sub-menu {
+    right: 0;
+    left: inherit;
+
+  }
+}
+
+.nav-wrap .menu-item-has-children > a::after {
+  margin-right: 1rem;
+  margin-left: 0;
+}
+
+.nav-wrap .sub-menu .menu-item-has-children > a::after {
+  left: 1rem;
+  right: inherit;
+  transform: scaleX(-1);
+}
+
+.nav-wrap .sub-menu li:hover .sub-menu {
+  right: 100%;
+  left: inherit;
+}
+
+header .header-cta-link {
+  &:before {
+    transform: translateX(20px);
+  }
+
+  &:after {
+    transform: translateX(-20px);
+  }
+
+  &:hover {
+    &:before {
+      transform: translateX(10px);
+    }
+
+    &:after {
+      transform: translateX(-10px);
+    }
+  }
+}
+
+.more-solution-btn {
+  i {
+    transform: scaleX(-1);
+  }
+}
+
+.small-btn {
+  @extend .more-solution-btn;
+}
+
+.childer {
+  left: 0;
+  right: inherit;
+}
+
+.main-menu-mobile {
+  .sub-menu {
+    right: 0;
+    left: inherit;
+    transform: translateX(100%);
+  }
+}
+
+.sidebar-list {
+  li {
+    a {
+      &:before {
+        margin-left: 8px;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.default-editor {
+  ul {
+    li {
+      &:before {
+        margin-left: 8px;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.series-section {
+  ul {
+    li {
+      a {
+        &:before {
+          margin-left: 15px;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.sub-closer, .childer {
+  @extend .more-solution-btn;
+}
+
+.capability-card {
+  .capability-title {
+    &:before {
+      right: -2rem;
+      left: auto;
+    }
+  }
+
+  ul {
+    li {
+      &:before {
+        margin-left: 8px;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@mixin circleBefore {
+  &::before {
+    left: inherit;
+  }
+}
+
+@media (min-width: 768px) {
+  .about-box-wrap {
+    p {
+      @include circleBefore;
+
+      &:before {
+        right: -4rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  .skills-content-wrap {
+    padding: 70px 64px 70px 230px;
+  }
+
+}
+
+.skills-cards {
+  p {
+    @include circleBefore;
+
+    &:before {
+      right: -1.5rem;
+    }
+  }
+}
+
+.sahab-btn, .all-blog, .all-post {
+  @extend .more-solution-btn;
+}
+
+#footer {
+  i {
+    margin-right: 0;
+    margin-left: 1rem;
+  }
+
+  .footer-menu {
+    li {
+      a {
+        &::before {
+          margin-left: 8px;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.cta-box-wrap, #home-podcast {
+  .secondary-fill {
+    left: 3rem;
+    right: auto;
+  }
+
+  .primary-fill {
+    right: -2.2rem;
+    left: auto;
+  }
+}
+
+.social-networks-buttons {
+  right: auto;
+  left: 1rem;
+}
+
+.insights-category {
+  a {
+    margin-left: 10px;
+    margin-right: 0;
+  }
+}

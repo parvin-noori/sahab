@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>انبار داده (Data Warehouse) چیست؟</title>
+<!--                            <link rel="stylesheet" href="assets/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="assets/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/YekanBakh.css">
+    <link rel="stylesheet" href="assets/css/figtree.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="rtl.css">
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<!--header-->
+<header id="header" class="inner-header">
+    <div class="container">
+        <div class="d-flex align-items-center justify-content-between header-wrap">
+            <div class="header-start align-items-center d-flex">
+                <div class="logo-wrap me-lg-5 me-2">
+                    <a href="#" class="logo-header">
+                        <img src="assets/imgs/inner-logo.png" alt="sahab" class="w-100">
+                    </a>
+                </div>
+
+                <button class="btn d-lg-none d-inline-block hamburger-menu-btn" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#responsive-menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="offcanvas offcanvas-start" id="responsive-menu">
+                    <div class="offcanvas-header">
+                        <h1 class="offcanvas-title"><img src="assets/imgs/Group-14.png" alt=""></h1>
+                        <button type="button" class="btn-close me-0" data-bs-dismiss="offcanvas"><i
+                                class="fa-solid fa-xmark"></i></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="nav flex-column main-menu-mobile">
+                            <li class="menu-item-has-children">
+                                <a href="#">
+                                    راهکارها
+                                    <span class="childer"><i class="fa-regular fa-chevron-right"></i></span>
+                                </a>
+                                <ul class="nav sub-menu">
+                                    <div class="menu_back_holder d-flex align-items-center justify-content-between">
+                                        <span>بازگشت</span>
+                                        <button class="btn sub-closer"><i class="fa-regular fa-chevron-right"></i>
+                                        </button>
+
+                                    </div>
+                                    <li><a href="#">دریاچه داده نئور</a></li>
+                                    <li><a href="#">راهکار MLops</a></li>
+                                    <li><a href="#">راهکار قیمت‌گذاری پویا </a></li>
+                                    <li><a href="#">ابزار اعتبارسنجی مشتریان بانکی</a></li>
+                                    <li><a href="#">نرم‌افزار شناسایی تقلب و جلوگیری از پولشویی</a></li>
+                                    <li><a href="#">سامانه توصیه‌گر</a></li>
+                                    <li><a href="#">پلتفرم تحلیل رفتار مشتریان سکان</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">تخصص ها</a></li>
+                            <li class="menu-item-has-children">
+                                <a href="#">
+                                    آکادمی سحاب
+                                    <span class="childer"><i class="fa-regular fa-chevron-right"></i></span>
+                                </a>
+                                <ul class="nav sub-menu">
+                                    <div class="menu_back_holder d-flex align-items-center justify-content-between">
+                                        <span>بازگشت</span>
+                                        <button class="btn sub-closer"><i class="fa-regular fa-chevron-right"></i>
+                                        </button>
+
+                                    </div>
+                                    <li><a href="#">مجله اینترنتی دیدگاه</a></li>
+                                    <li><a href="#">دوشنبه های دیتایی سحاب</a></li>
+                                    <li><a href="#">رویدادها</a></li>
+                                    <li><a href="#">بلاگ فنی</a></li>
+                                    <li><a href="#">دوره های اموزشی</a></li>
+                                    <li><a href="#">اپلکیشن آکادمی سحاب</a></li>
+                                    <li><a href="#">واژه نامه داده و تحلیل</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="#">
+                                    درباره ما
+                                    <span class="childer"><i class="fa-regular fa-chevron-right"></i></span>
+                                </a>
+                                <ul class="nav sub-menu">
+                                    <div class="menu_back_holder d-flex align-items-center justify-content-between">
+                                        <span>بازگشت</span>
+                                        <button class="btn sub-closer"><i class="fa-regular fa-chevron-right"></i>
+                                        </button>
+
+                                    </div>
+                                    <li><a href="#">درباره سحاب</a></li>
+                                    <li class="menu-item-has-children">
+                                        <a href="#">
+                                            زندگی سحابی
+                                            <span class="childer"><i class="fa-regular fa-chevron-right"></i></span>
+                                        </a>
+                                        <ul class="nav sub-menu">
+                                            <div class="menu_back_holder d-flex align-items-center justify-content-between">
+                                                <span>بازگشت</span>
+                                                <button class="btn sub-closer"><i
+                                                        class="fa-regular fa-chevron-right"></i></button>
+
+                                            </div>
+                                            <li><a href="#">جلسات گپ‌وگفت کتابی</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">اخبار </a></li>
+                                    <li><a href="#">تماس با ما</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="nav-wrap d-lg-inline-block d-none">
+                    <ul class="nav px-0">
+                        <li class="menu-item-has-children">
+                            <a href="#">راهکارها</a>
+                            <ul class="sub-menu nav flex-column">
+                                <li><a href="#">دریاچه داده نئور</a></li>
+                                <li><a href="#">راهکار MLops</a></li>
+                                <li><a href="#">راهکار قیمت‌گذاری پویا </a></li>
+                                <li><a href="#">ابزار اعتبارسنجی مشتریان بانکی</a></li>
+                                <li><a href="#">نرم‌افزار شناسایی تقلب و جلوگیری از پولشویی</a></li>
+                                <li><a href="#">سامانه توصیه‌گر</a></li>
+                                <li><a href="#">پلتفرم تحلیل رفتار مشتریان سکان</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">تخصص ها</a></li>
+                        <li class="menu-item-has-children">
+                            <a href="#">آکادمی سحاب</a>
+                            <ul class="sub-menu nav flex-column">
+                                <li><a href="#">مجله اینترنتی دیدگاه</a></li>
+                                <li><a href="#">دوشنبه های دیتایی سحاب</a></li>
+                                <li><a href="#">رویدادها</a></li>
+                                <li><a href="#">بلاگ فنی</a></li>
+                                <li><a href="#">دوره های اموزشی</a></li>
+                                <li><a href="#">اپلکیشن آکادمی سحاب</a></li>
+                                <li><a href="#">واژه نامه داده و تحلیل</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="#">درباره ما</a>
+                            <ul class="sub-menu nav flex-column">
+                                <li><a href="#">درباره سحاب</a></li>
+                                <li class="menu-item-has-children">
+                                    <a href="#">زندگی سحابی</a>
+                                    <ul class="nav sub-menu">
+                                        <li><a href="#">جلسات گپ‌وگفت کتابی</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">اخبار </a></li>
+                                <li><a href="#">تماس با ما</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header-end d-flex align-items-center">
+                <a href="#" class="header-cta-link me-md-4 me-2">فرصت های شغلی</a>
+                <button class="btn search-btn" type="button" data-bs-toggle="modal" data-bs-target="#searchModal"><i
+                        class="fa-light fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="breadcrumb mb-2">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0 py-2">
+                <li class="breadcrumb-item"><a href="#">سحاب</a></li>
+                <li class="breadcrumb-item"><a href="#">مقالات دیدگاه</a></li>
+                <li class="breadcrumb-item"><a href="#">مبانی داده محوری</a></li>
+                <li class="breadcrumb-item active" aria-current="page">انبار داده (Data Warehouse) چیست؟</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<main class="main-content">
+    <div class="insights-single single-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-8 pe-md-4">
+                    <button class="sahab-btn btn p-2 mb-3 border-0 sidebar-btn d-md-none d-inline-block" type="button"
+                            data-bs-toggle="offcanvas" data-bs-target="#demo">
+                        نمایش سایدبار
+                    </button>
+                    <div class="offcanvas offcanvas-start sidebar-offcanvas p-3" id="demo">
+                        <div class="offcanvas-header d-flex align-items-center">
+                            <span class="offcanvas-title">سایدبار</span>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"><i
+                                    class="fa-regular fa-xmark"></i></button>
+                        </div>
+                        <div class="offcanvas-body px-0">
+                            <div class="fixed-sidebar ">
+                                <div class="sidebar-list suggest-section">
+                                    <h5 class="sidebar-title">پیشنهاد سردبیر</h5>
+                                    <ul class="nav flex-column">
+                                        <li>
+                                            <div class="default-item">
+                                                <a href="#" class="card-default-image">
+                                                    <img src="assets/imgs/what-is-data-warehouse-370x220.jpg" alt="">
+                                                </a>
+                                                <div class="default-card">
+                                                    <h3 class="default-card-title">
+                                                        <a href="#">
+                                                            انبار داده (Data Warehouse) چیست؟
+                                                        </a>
+                                                    </h3>
+                                                    <p>
+                                                        انبار داده یا Data Warehouse مجموعه بزرگی از داده‌های تجاری است
+                                                        که به
+                                                        سازمان‌ها و کسب‌وکارها کمک می‌کند تا در تصمیم‌گیری‌های خود
+                                                        دقیق‌تر و
+                                                        هوشمندانه‌تر عمل کنند.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                چرا دریاچه داده برای ذخیره‌سازی و مدیریت کلان داده‌ها مهم است؟
+                                            </a>
+                                        </li>
+                                        <li><a href="#">
+                                            دانشمند داده کیست و چطور می‌توان متخصص داده شد؟ </a></li>
+                                    </ul>
+                                </div>
+                                <div class="series-section mb-5">
+                                    <h5 class="sidebar-title">ترتیبی که برای خواندن مقالات مرتبط به شما پیشنهاد
+                                        می‌کنیم</h5>
+                                    <ul class="nav flex-column">
+                                        <li><a href="#">تصمیم‌ گیری داده محور چیست و چه مزایایی دارد؟</a></li>
+                                        <li><a href="#">علم داده چیست و چه کاربردی دارد؟</a></li>
+                                        <li><a href="#">سازمان داده محور چیست؟</a></li>
+                                        <li><a href="#">داده‌ کاوی (Data Mining) چیست؟</a></li>
+                                        <li><a href="#">کلان داده چیست و چه کاربردی دارد؟</a></li>
+                                        <li><a href="#">چگونه مهندس داده شویم؟</a></li>
+                                        <li><a href="#">یادگیری ماشین (Machine Learning) چیست؟</a></li>
+                                        <li><a href="#">هوش مصنوعی (Artificial Intelligence) چیست؟</a></li>
+                                        <li><a href="#">یادگیری عمیق (Deep Learning) چیست؟</a></li>
+                                        <li><a href="#">دانشمند داده کیست و چطور می‌توان متخصص داده شد؟</a></li>
+                                        <li><a href="#">چرا دریاچه داده برای ذخیره‌سازی و مدیریت کلان داده‌ها مهم
+                                            است؟</a></li>
+                                        <li class="active"><a href="#">انبار داده (Data Warehouse) چیست؟</a></li>
+                                    </ul>
+                                </div>
+                                <div class="sidebar-list mostViews-list">
+                                    <h5 class="sidebar-title">پربازدیدترین مقالات</h5>
+                                    <ul class="nav">
+                                        <li><a href="#">انبار داده (Data Warehouse) چیست؟ </a></li>
+                                        <li><a href="#">چرا دریاچه داده برای ذخیره‌سازی و مدیریت کلان داده‌ها مهم
+                                            است؟ </a></li>
+                                        <li><a href="#">یادگیری عمیق (Deep Learning) چیست؟ </a></li>
+                                        <li><a href="#">یادگیری ماشین (Machine Learning) چیست؟ </a></li>
+                                        <li><a href="#">کلان داده چیست و چه کاربردی دارد؟ </a></li>
+                                    </ul>
+                                </div>
+                                <div class="sidebar-list category-list">
+                                    <h5 class="sidebar-title">موضوعات</h5>
+                                    <ul class="nav flex-column">
+                                        <li><a href="#">مبانی داده محوری </a></li>
+                                        <li><a href="#">مدیریت داده محوری</a></li>
+                                        <li><a href="#">کاربرد علوم داده</a></li>
+                                        <li><a href="#">بازاریابی داده محور</a></li>
+                                        <li><a href="#">فناوری های داده</a></li>
+                                    </ul>
+                                </div>
+                                <div class="sidebar-list recent-list">
+                                    <h5 class="sidebar-title">جدیدترین مقالات</h5>
+                                    <ul class="nav flex-column">
+                                        <li><a href="#">نقش نرم‌ افزارهای شناسایی تقلب و جلوگیری از پولشویی در امنیت
+                                            کسب‌وکارها</a></li>
+                                        <li><a href="#">انبار داده (Data Warehouse) چیست؟</a></li>
+                                        <li><a href="#">سامانه‌ توصیه‌گر؛ دروازه آشنایی کسب‌وکار با مشتری</a></li>
+                                        <li><a href="#">چرا دریاچه داده برای ذخیره‌سازی و مدیریت کلان داده‌ها مهم
+                                            است؟</a></li>
+                                        <li><a href="#">رهبری با کمک تحلیل تصمیم‌محور داده</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex top-article row">
+                        <div class="col-12 col-lg-6 d-flex align-items-center justify-content-md-start justify-content-between mb-md-0 mb-3">
+                            <div class="category-list d-inline-block me-5">
+                                <a href="#">مبانی داده محوری</a>
+                            </div>
+                            <a href="#" class="author-name">
+                                <span>تحریریه دیدگاه</span>
+                            </a>
+                        </div>
+                        <div class="col-12 col-lg-6 d-flex align-items-center">
+                            <span class="study-time me-5">زمان مطالعه: 6 دقیقه</span>
+                            <span class="post-date">۱۰ مرداد ۱۴۰۱ - ۹:۲۷   </span>
+                            <a href="javascript:window.print()" class="print-page ms-auto"><i
+                                    class="fa-regular fa-print"></i></a>
+                        </div>
+                    </div>
+                    <h1 class="single-title">انبار داده (Data Warehouse) چیست؟</h1>
+                    <div class="single-thumbnail">
+                        <img src="assets/imgs/what-is-data-warehouse.jpg" alt="" class="w-100 mb-4">
+                    </div>
+                    <article class="default-editor">
+                        <ul class="nav flex-column default-editor-list p-4 mt-4 mb-5">
+                            <li class="default-editor-title mb-2">راهنمای مطالعه</li>
+                            <li><a href="#">انبار داده چیست؟</a></li>
+                            <li><a href="#">چگونه میتوانیم یک انبار داده بسازیم؟</a></li>
+                            <li><a href="#">تفاوت انبار داده و مراکز داده چیست؟</a></li>
+                            <li><a href="#">تفاوت انبار داده و پایگاه داده چیست؟</a></li>
+                            <li><a href="#">انبار داده شامل چه بخش هایی می شود؟</a></li>
+                            <li><a href="#">دلایل استفاده از انبار داده</a></li>
+                            <li><a href="#">استفاده از انبار داده در صنایع مختلف</a></li>
+                            <li><a href="#">ابزارهای انبار داده</a></li>
+                        </ul>
+                        <p>
+                            تحلیلگران کسب‌و‌کار، مهندسان داده و متخصصان ابزارهای هوش تجاری (BI)، کاربران  SQL و سایر
+                            برنامه‌های تحلیلی به داده‌ها دسترسی دارند. تجزیه‌وتحلیل داده‌ها به کسب‌و‌کارها کمک می‌کند تا
+                            بتوانند در بازار پررقابت امروز، موفق‌تر عمل کنند و در صنعت خود بدرخشند. متخصصان، برای
+                            استخراج اطلاعات از داده‌ها، نظارت بر عملکرد کسب‌و‌کار و پشتیبانی، به گزارش‌ها، داشبوردها و
+                            ابزارهای تحلیلی متکی هستند. انبارهای داده با ذخیره‌سازی کارآمد داده‌ها این گزارش‌ها،
+                            داشبوردها و ابزارهای تحلیلی را در اختیار متخصصان داده قرار می‌دهند.
+                        </p>
+                        <h2>انبار داده چیست؟</h2>
+                        <p>انبار داده یا Data Warehouse مجموعه بزرگی از داده‌های تجاری است که به سازمان‌ها و کسب‌وکارها
+                            کمک می‌کند تا در تصمیم‌گیری‌های خود دقیق‌تر و هوشمندانه‌تر عمل کنند. انبار داده مفهوم جدیدی
+                            نیست و از دهه ۱۹۸۰ وجود داشته است. حجم زیادی از داده‌های موجود در انبارهای داده از منابع
+                            مختلفی جمع‌آوری می‌شوند؛ برنامه‌های کاربردی داخلی مانند بازاریابی، فروش و امور مالی
+                            نمونه‌هایی از این منابع هستند.
+                        </p>
+                        <h2>چگونه می‌توانیم یک انبار داده بسازیم؟</h2>
+                        <p>برای ساخت انبار داده باید ۷ مرحله زیر را به ترتیب طی کنید:</p>
+                        <h3>۱- تعیین اهداف تجاری</h3>
+                        <ul class="nav flex-column">
+                            <li>تعیین اهداف تجاری(تاکتیکی و استراتژیک)</li>
+                            <li>شناسایی و اولویت بندی انتظارات و نیازهای شرکت، بخش ها و کاربران تجاری از پروژه</li>
+                            <li>بررسی معماری تکنولوژیک فعلی شرکت، برنامه های کاربردی در حال استفاده و ...</li>
+                            <li>انجام یک تجزیه و تحلیل اولیه</li>
+                            <li>تشریح محدوده انبار داده</li>
+                        </ul>
+                        <h3>۲- مفهوم‌سازی و انتخاب پلتفرم</h3>
+                        <ul class="nav flex-column">
+                            <li>تعریف مجموعه ویژگی‌های راه‌حل انبار داده مورد نظر</li>
+                            <li>انتخاب گزینه بهینه استقرار (در محل/فضای ابری/هیبرید)</li>
+                            <li>انتخاب رویکرد طراحی معماری بهینه برای ساخت انبار داده</li>
+                            <li>انتخاب فناوری‌های انبار داده با در نظر گرفتن تعداد منابع داده و حجم داده برای بارگیری در
+                                انبار داده
+                            </li>
+                            <li>جریان‌های داده برای پیاده سازی</li>
+                        </ul>
+                        <p>این مرحله بین ۳ تا ۱۵ روز زمان می‌برد.</p>
+                        <h3>۳- ایجاد نقشه راه پروژه</h3>
+                        <ul class="nav flex-column">
+                            <li>تعریف محدوده پروژه توسعه انبار داده، برنامه‌ریزی بودجه، جدول زمانی و…</li>
+                            <li>برنامه‌ریزی طراحی، توسعه و آزمایش</li>
+                            <li>تدوین اسناد محدوده پروژه انبار داده، سند چشم‌انداز معماری راهکار انبار داده، استراتژی
+                                استقرار انبار داده، استراتژی تست، نقشه راه اجرای پروژه
+                            </li>
+                            <li>تدوین برنامه مدیریت ریسک</li>
+                            <li>برآورد تلاش‌ها برای پروژه توسعه انبار داده، TCO و ROI</li>
+                        </ul>
+                        <p>زمان تقریبی این مرحله ۴ تا ۱۵ روز است.</p>
+                        <h3>۴- تجزیه‌وتحلیل سیستم و طراحی معماری انبار داده</h3>
+                        <ul class="nav flex-column">
+                            <li>تجزیه و تحلیل دقیق هر منبع داده</li>
+                            <li>نوع و ساختار داده</li>
+                            <li>حجم داده تولید شده روزانه</li>
+                            <li>درجه حساسیت داده‌ها و رویکرد دسترسی به داده کاربردی</li>
+                            <li>کیفیت داده، داده‌های از دست رفته/ کم‌ارزش، امکان انجام پاکسازی داده‌ها در سیستم منبع
+                                داده
+                            </li>
+                            <li>ارتباط با سایر منابع داده</li>
+                            <li>طراحی سیاست‌های پاکسازی داده‌ها</li>
+                            <li>ایجاد خط‌مشی‌های امنیتی داده‌ها (سیاست‌های دسترسی به داده‌ها بر اساس محدودیت‌های قانونی
+                                و قوانین امنیت داده‌ها، سیاست‌های رمزگذاری داده‌ها، سیاست‌های نظارت بر دسترسی به داده‌ها
+                                و انطباق داده‌ها، راهبرد پشتیبان‌گیری از داده‌ها و…)
+                            </li>
+                            <li>طراحی مدل‌های داده برای انبار داده و دیتا مارت</li>
+                            <li>طراحی فرآیندهای ETL/ELT برای یکپارچه‌سازی و کنترل جریان داده‌ها</li>
+                        </ul>
+                        <p>انجام این مرحله دست‌کم ۱۵ روز زمان نیاز دارد.</p>
+                        <h3>۵- توسعه و تثبیت</h3>
+                        <ul class="nav flex-column">
+                            <li>سفارشی‌سازی پلتفرم انبار داده</li>
+                            <li>پیکربندی نرم‌افزار امنیت داده‌ها و اجرای سیاست‌های امنیت داده</li>
+                            <li>توسعه و تست ETL/ELT</li>
+                            <li>تست عملکرد انبار داده</li>
+                        </ul>
+                        <h3>۶- راه‌اندازی</h3>
+                        <ul class="nav flex-column">
+                            <li>انتقال داده ها، ارزیابی کیفیت داده‌ها</li>
+                            <li>معرفی انبار داده به کاربران تجاری</li>
+                            <li>برگزاری جلسات و کارگاه‌های آموزشی برای کاربران</li>
+                        </ul>
+                        <h3>۶۷- پشتیبانی پس از راه اندازی</h3>
+                        <ul class="nav flex-column">
+                            <li>پیکربندی عملکرد ETL / ELT</li>
+                            <li>پیکربندی عملکرد و در دسترس بودن انبار داده</li>
+                            <li>پشتیبانی از کاربران نهایی</li>
+                        </ul>
+                        <p>بسیاری از کاربران و متخصصان فنی ممکن است بپرسند تفاوت انبار داده و مرکز داده (Data Center) در
+                            چیست. در ادامه به این موضوع می‌پردازیم.
+
+                        </p>
+                        <img src="assets/imgs/what-is-data-warehouse-01.jpg" alt="" class="mw-100">
+                        <h2>تفاوت انبار داده و مراکز داده چیست؟</h2>
+                        <p>مراکز داده، مکان‌های فیزیکی هستند که سرورها در آنها نگهداری می‌شوند؛ در حالی که انبار داده،
+                            یک مفهوم نرم‌افزاری و در واقع یک داده ساختار بر روی یک یا چند سرور است.</p>
+                        <p>به بیان ساده‌تر، مرکز داده یک اتاق فیزیکی یا ساختمانی است که سرورهای داده و کامپیوترها در آن
+                            قرار می‌گیرند. در حالی که یک انبار داده فقط نوعی  پایگاه داده نرم‌افزاری  است که برای
+                            گزارش‌گیری و تجزیه‌و‌تحلیل داده‌ها استفاده می‌شود و یکی از اجزای اصلی هوش تجاری به شمار
+                            می‌آید.</p>
+                        <p>از دیگر چیزهایی که ممکن است با انبار داده اشتباه گرفته شود پایگاه داده (Database) است. د
+                            ادامه تفاوت انبار داده و پایگاه داده را توضیح خواهیم داد.</p>
+                        <h2>تفاوت انبار داده و پایگاه داده چیست؟</h2>
+
+                    </article>
+                    <div class="d-flex flex-md-row flex-column footer-single align-items-md-center justify-content-between">
+                        <ul class="share-social d-flex nav">
+                            <li><a href="#"><i class="fa-light fa-share-nodes"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa-solid fa-paper-plane"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        </ul>
+                        <a href="#" class="shortLink">https://www.sahab.ir/?p=2801</a>
+                    </div>
+
+                    <!--comment-->
+                    <div class="comment-section">
+                        <h4 class="section-title">دیدگاه شما</h4>
+                        <div class="col-12 mt-4">
+                            <div class="comment-respond with-border" id="respond">
+                                <form action="" id="commentform" class="comment-form row">
+                                    <div class="col-12 col-md-6 col-lg-6 ">
+                                        <div class="comment-form-author  comment-field">
+                                            <input type="text" id="author" class="form-control author"
+                                                   autocomplete="off" placeholder="نام و نام خانوادگی">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-6 ">
+                                        <div class="comment-form-email  comment-field ">
+                                            <input type="email" id="email" class="form-control email" autocomplete="off"
+                                                   placeholder="info@sample.com">
+
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-12 col-lg-12">
+                                        <div class="comment-field">
+                                            <textarea class="form-control comment-message" id="comment" rows="4"
+                                                      placeholder="پیام خود را اینجا بنویسید"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12 form-submit">
+                                        <input class="btn submit-btn w-100" id="submit" name="submit" type="submit"
+                                               value="ارسال نظر">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="insights-category py-4">
+                                <a href="#">مبانی داده محوری</a>
+                                <a href="#">مدیریت داده محور</a>
+                                <a href="#">کاربرد علوم داده</a>
+                                <a href="#">بازاریابی داده محور</a>
+                                <a href="#">فناوری های داده</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <aside class="col-12 col-md-4 blog-sidebar scroller ps-md-4 d-md-inline-block d-none">
+                    <div class="fixed-sidebar ">
+                        <div class="sidebar-list suggest-section">
+                            <h5 class="sidebar-title">پیشنهاد سردبیر</h5>
+                            <ul class="nav flex-column">
+                                <li>
+                                    <div class="default-item">
+                                        <a href="#" class="card-default-image">
+                                            <img src="assets/imgs/what-is-data-warehouse-370x220.jpg" alt="">
+                                        </a>
+                                        <div class="default-card">
+                                            <h3 class="default-card-title">
+                                                <a href="#">
+                                                    انبار داده (Data Warehouse) چیست؟
+                                                </a>
+                                            </h3>
+                                            <p>
+                                                انبار داده یا Data Warehouse مجموعه بزرگی از داده‌های تجاری است که به
+                                                سازمان‌ها و کسب‌وکارها کمک می‌کند تا در تصمیم‌گیری‌های خود دقیق‌تر و
+                                                هوشمندانه‌تر عمل کنند.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        چرا دریاچه داده برای ذخیره‌سازی و مدیریت کلان داده‌ها مهم است؟
+                                    </a>
+                                </li>
+                                <li><a href="#">
+                                    دانشمند داده کیست و چطور می‌توان متخصص داده شد؟ </a></li>
+                            </ul>
+                        </div>
+                        <div class="series-section mb-5">
+                            <h5 class="sidebar-title">ترتیبی که برای خواندن مقالات مرتبط به شما پیشنهاد می‌کنیم</h5>
+                            <ul class="nav flex-column">
+                                <li><a href="#">تصمیم‌ گیری داده محور چیست و چه مزایایی دارد؟</a></li>
+                                <li><a href="#">علم داده چیست و چه کاربردی دارد؟</a></li>
+                                <li><a href="#">سازمان داده محور چیست؟</a></li>
+                                <li><a href="#">داده‌ کاوی (Data Mining) چیست؟</a></li>
+                                <li><a href="#">کلان داده چیست و چه کاربردی دارد؟</a></li>
+                                <li><a href="#">چگونه مهندس داده شویم؟</a></li>
+                                <li><a href="#">یادگیری ماشین (Machine Learning) چیست؟</a></li>
+                                <li><a href="#">هوش مصنوعی (Artificial Intelligence) چیست؟</a></li>
+                                <li><a href="#">یادگیری عمیق (Deep Learning) چیست؟</a></li>
+                                <li><a href="#">دانشمند داده کیست و چطور می‌توان متخصص داده شد؟</a></li>
+                                <li><a href="#">چرا دریاچه داده برای ذخیره‌سازی و مدیریت کلان داده‌ها مهم است؟</a></li>
+                                <li class="active"><a href="#">انبار داده (Data Warehouse) چیست؟</a></li>
+                            </ul>
+                        </div>
+                        <div class="sidebar-list mostViews-list">
+                            <h5 class="sidebar-title">پربازدیدترین مقالات</h5>
+                            <ul class="nav">
+                                <li><a href="#">انبار داده (Data Warehouse) چیست؟ </a></li>
+                                <li><a href="#">چرا دریاچه داده برای ذخیره‌سازی و مدیریت کلان داده‌ها مهم است؟ </a></li>
+                                <li><a href="#">یادگیری عمیق (Deep Learning) چیست؟ </a></li>
+                                <li><a href="#">یادگیری ماشین (Machine Learning) چیست؟ </a></li>
+                                <li><a href="#">کلان داده چیست و چه کاربردی دارد؟ </a></li>
+                            </ul>
+                        </div>
+                        <div class="sidebar-list category-list">
+                            <h5 class="sidebar-title">موضوعات</h5>
+                            <ul class="nav flex-column">
+                                <li><a href="#">مبانی داده محوری </a></li>
+                                <li><a href="#">مدیریت داده محوری</a></li>
+                                <li><a href="#">کاربرد علوم داده</a></li>
+                                <li><a href="#">بازاریابی داده محور</a></li>
+                                <li><a href="#">فناوری های داده</a></li>
+                            </ul>
+                        </div>
+                        <div class="sidebar-list recent-list">
+                            <h5 class="sidebar-title">جدیدترین مقالات</h5>
+                            <ul class="nav flex-column">
+                                <li><a href="#">نقش نرم‌ افزارهای شناسایی تقلب و جلوگیری از پولشویی در امنیت
+                                    کسب‌وکارها</a></li>
+                                <li><a href="#">انبار داده (Data Warehouse) چیست؟</a></li>
+                                <li><a href="#">سامانه‌ توصیه‌گر؛ دروازه آشنایی کسب‌وکار با مشتری</a></li>
+                                <li><a href="#">چرا دریاچه داده برای ذخیره‌سازی و مدیریت کلان داده‌ها مهم است؟</a></li>
+                                <li><a href="#">رهبری با کمک تحلیل تصمیم‌محور داده</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+        <div class="related-posts">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="section-title">دیدگاه های مرتبط</h3>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="default-item">
+                            <a href="#" class="card-default-image">
+                                <img src="assets/imgs/what-is-data-warehouse-370x220.jpg" alt="انبار داده (Data Warehouse) چیست؟" class="w-100">
+                            </a>
+                            <div class="default-card">
+                                <h3 class="default-card-title">
+                                    <a href="#">انبار داده (Data Warehouse) چیست؟ </a>
+                                </h3>
+                                <p>انبار داده یا Data Warehouse مجموعه بزرگی از داده‌های تجاری است که به سازمان‌ها و
+                                    کسب‌وکارها کمک می‌کند تا در تصمیم‌گیری‌های خود دقیق‌تر و هوشمندانه‌تر عمل کنند.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="default-item">
+                            <a href="#" class="card-default-image">
+                                <img src="assets/imgs/what-is-data-warehouse-370x220.jpg" alt="انبار داده (Data Warehouse) چیست؟" class="w-100">
+                            </a>
+                            <div class="default-card">
+                                <h3 class="default-card-title">
+                                    <a href="#">انبار داده (Data Warehouse) چیست؟ </a>
+                                </h3>
+                                <p>انبار داده یا Data Warehouse مجموعه بزرگی از داده‌های تجاری است که به سازمان‌ها و
+                                    کسب‌وکارها کمک می‌کند تا در تصمیم‌گیری‌های خود دقیق‌تر و هوشمندانه‌تر عمل کنند.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="default-item">
+                            <a href="#" class="card-default-image">
+                                <img src="assets/imgs/what-is-data-warehouse-370x220.jpg" alt="انبار داده (Data Warehouse) چیست؟" class="w-100">
+                            </a>
+                            <div class="default-card">
+                                <h3 class="default-card-title">
+                                    <a href="#">انبار داده (Data Warehouse) چیست؟ </a>
+                                </h3>
+                                <p>انبار داده یا Data Warehouse مجموعه بزرگی از داده‌های تجاری است که به سازمان‌ها و
+                                    کسب‌وکارها کمک می‌کند تا در تصمیم‌گیری‌های خود دقیق‌تر و هوشمندانه‌تر عمل کنند.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!--footer-->
+<footer id="footer" class="footer inner-footer">
+    <div class="container position-relative">
+        <div class="row row-footer">
+            <div class="col-12 col-md-6 footer-about">
+                <h6 class="footer-title">سحاب</h6>
+                <div class="footer-desc">
+                    <p>
+                        سحاب در سال ۱۳۹۳ با هدف حل مسائل جمع آوری، نگهداری و تحلیل داده تشکیل شد و امروز برای نیازهای
+                        مختلف داده‌ای کسب‌وکارها، راه‌حل‌های داده‌محور ارائه می‌کند.
+                    </p>
+                </div>
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <i class="fa-light fa-location-dot"></i>
+                        <span class="mb-2 d-inline-block">
+                        <small>آدرس دفتر مرکزی : </small>
+                        تهران، خیابان خرمشهر، پلاک ۲۲
+                          </span>
+                        <span class="d-block">
+                        <small>ساختمان شماره ۲: </small>
+                            تهران، خیابان خرمشهر، خیابان عربعلی،پلاک ۲۸
+                          </span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-light fa-envelope"></i>
+                        <span>
+                        <small>ایمیل :  </small>
+                        <a href="mailto:info@sahab.ir">info@sahab.ir</a>
+                          </span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-light fa-phone-flip"></i>
+                        <span>
+                        <small>تلفن :  </small>
+                        <a href="tel:02191007371">۰۲۱۹۱۰۰۷۳۷۱</a>
+                          </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12  col-md-6 footer-menu-wrap">
+                <div class="row">
+                    <div class="col-6 col-lg-6">
+                        <div class="menu-footer-holder">
+                            <h3 class="footer-title">راهکارها</h3>
+                            <div class="footer-menu">
+                                <ul class="footer-menu nav flex-column">
+                                    <li><a href="#">دریاچه داده نئور</a></li>
+                                    <li><a href="#">راهکار MLops</a></li>
+                                    <li><a href="#">راهکار قیمت گذاری پویا</a></li>
+                                    <li><a href="#">ابزار اعتبارسنجی مشتریان بانکی</a></li>
+                                    <li><a href="#">نرم افزار شناسایی تقلب و جلوگیری از پولشویی</a></li>
+                                    <li><a href="#">سامانه توصیه گری</a></li>
+                                    <li><a href="#">پلتفرم تحلیل داده سکان</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-6">
+                        <div class="menu-footer-holder">
+                            <h3 class="footer-title">لینک های کاربردی</h3>
+                            <div class="footer-menu">
+                                <ul class="footer-menu nav flex-column">
+                                    <li><a href="#">فرصت های شغلی</a></li>
+                                    <li><a href="#">مجله اینترنتی دیدگاه</a></li>
+                                    <li><a href="#">پلتفرم سکان</a></li>
+                                    <li><a href="#">پروژه های متن باز</a></li>
+                                    <li><a href="#">ارزیابی بلوغ داده محوری</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 pt-4">
+                        <ul class="social-wrap d-flex nav">
+                            <li><a href="#" class="instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="#" class="linkedin ms-2"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row footer-copyRight py-4 px-1">
+            <div class="col-12 col-md-6 copyright">
+                <p>© 2022 Sahab. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

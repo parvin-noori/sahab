@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>podcast</title>
+    <!--    <link rel="stylesheet" href="assets/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="assets/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/YekanBakh.css">
+    <link rel="stylesheet" href="assets/css/figtree.css">
+    <link rel="stylesheet" href="assets/css/plyr.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="rtl.css">
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/plyr.js"></script>
+    <script src="assets/js/main.js"></script>
+</head>
+<body>
+<!--header-->
+<header id="header" class="inner-header">
+    <div class="container">
+        <div class="d-flex align-items-center justify-content-between header-wrap">
+            <div class="header-start align-items-center d-flex">
+                <div class="logo-wrap me-lg-5 me-2">
+                    <a href="#" class="logo-header">
+                        <img src="assets/imgs/inner-logo.png" alt="sahab" class="w-100">
+                    </a>
+                </div>
+
+                <button class="btn d-lg-none d-inline-block hamburger-menu-btn" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#responsive-menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="offcanvas offcanvas-start" id="responsive-menu">
+                    <div class="offcanvas-header">
+                        <h1 class="offcanvas-title"><img src="assets/imgs/Group-14.png" alt=""></h1>
+                        <button type="button" class="btn-close me-0" data-bs-dismiss="offcanvas"><i
+                                class="fa-solid fa-xmark"></i></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="nav flex-column main-menu-mobile">
+                            <li class="menu-item-has-children">
+                                <a href="#">
+                                    راهکارها
+                                    <span class="childer"><i class="fa-regular fa-chevron-right"></i></span>
+                                </a>
+                                <ul class="nav sub-menu">
+                                    <div class="menu_back_holder d-flex align-items-center justify-content-between">
+                                        <span>بازگشت</span>
+                                        <button class="btn sub-closer"><i class="fa-regular fa-chevron-right"></i>
+                                        </button>
+
+                                    </div>
+                                    <li><a href="#">دریاچه داده نئور</a></li>
+                                    <li><a href="#">راهکار MLops</a></li>
+                                    <li><a href="#">راهکار قیمت‌گذاری پویا </a></li>
+                                    <li><a href="#">ابزار اعتبارسنجی مشتریان بانکی</a></li>
+                                    <li><a href="#">نرم‌افزار شناسایی تقلب و جلوگیری از پولشویی</a></li>
+                                    <li><a href="#">سامانه توصیه‌گر</a></li>
+                                    <li><a href="#">پلتفرم تحلیل رفتار مشتریان سکان</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">تخصص ها</a></li>
+                            <li class="menu-item-has-children">
+                                <a href="#">
+                                    آکادمی سحاب
+                                    <span class="childer"><i class="fa-regular fa-chevron-right"></i></span>
+                                </a>
+                                <ul class="nav sub-menu">
+                                    <div class="menu_back_holder d-flex align-items-center justify-content-between">
+                                        <span>بازگشت</span>
+                                        <button class="btn sub-closer"><i class="fa-regular fa-chevron-right"></i>
+                                        </button>
+
+                                    </div>
+                                    <li><a href="#">مجله اینترنتی دیدگاه</a></li>
+                                    <li><a href="#">دوشنبه های دیتایی سحاب</a></li>
+                                    <li><a href="#">رویدادها</a></li>
+                                    <li><a href="#">بلاگ فنی</a></li>
+                                    <li><a href="#">دوره های اموزشی</a></li>
+                                    <li><a href="#">اپلکیشن آکادمی سحاب</a></li>
+                                    <li><a href="#">واژه نامه داده و تحلیل</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="#">
+                                    درباره ما
+                                    <span class="childer"><i class="fa-regular fa-chevron-right"></i></span>
+                                </a>
+                                <ul class="nav sub-menu">
+                                    <div class="menu_back_holder d-flex align-items-center justify-content-between">
+                                        <span>بازگشت</span>
+                                        <button class="btn sub-closer"><i class="fa-regular fa-chevron-right"></i>
+                                        </button>
+
+                                    </div>
+                                    <li><a href="#">درباره سحاب</a></li>
+                                    <li class="menu-item-has-children">
+                                        <a href="#">
+                                            زندگی سحابی
+                                            <span class="childer"><i class="fa-regular fa-chevron-right"></i></span>
+                                        </a>
+                                        <ul class="nav sub-menu">
+                                            <div class="menu_back_holder d-flex align-items-center justify-content-between">
+                                                <span>بازگشت</span>
+                                                <button class="btn sub-closer"><i
+                                                        class="fa-regular fa-chevron-right"></i></button>
+
+                                            </div>
+                                            <li><a href="#">جلسات گپ‌وگفت کتابی</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">اخبار </a></li>
+                                    <li><a href="#">تماس با ما</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="nav-wrap d-lg-inline-block d-none">
+                    <ul class="nav px-0">
+                        <li class="menu-item-has-children">
+                            <a href="#">راهکارها</a>
+                            <ul class="sub-menu nav flex-column">
+                                <li><a href="#">دریاچه داده نئور</a></li>
+                                <li><a href="#">راهکار MLops</a></li>
+                                <li><a href="#">راهکار قیمت‌گذاری پویا </a></li>
+                                <li><a href="#">ابزار اعتبارسنجی مشتریان بانکی</a></li>
+                                <li><a href="#">نرم‌افزار شناسایی تقلب و جلوگیری از پولشویی</a></li>
+                                <li><a href="#">سامانه توصیه‌گر</a></li>
+                                <li><a href="#">پلتفرم تحلیل رفتار مشتریان سکان</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">تخصص ها</a></li>
+                        <li class="menu-item-has-children">
+                            <a href="#">آکادمی سحاب</a>
+                            <ul class="sub-menu nav flex-column">
+                                <li><a href="#">مجله اینترنتی دیدگاه</a></li>
+                                <li><a href="#">دوشنبه های دیتایی سحاب</a></li>
+                                <li><a href="#">رویدادها</a></li>
+                                <li><a href="#">بلاگ فنی</a></li>
+                                <li><a href="#">دوره های اموزشی</a></li>
+                                <li><a href="#">اپلکیشن آکادمی سحاب</a></li>
+                                <li><a href="#">واژه نامه داده و تحلیل</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="#">درباره ما</a>
+                            <ul class="sub-menu nav flex-column">
+                                <li><a href="#">درباره سحاب</a></li>
+                                <li class="menu-item-has-children">
+                                    <a href="#">زندگی سحابی</a>
+                                    <ul class="nav sub-menu">
+                                        <li><a href="#">جلسات گپ‌وگفت کتابی</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">اخبار </a></li>
+                                <li><a href="#">تماس با ما</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header-end d-flex align-items-center">
+                <a href="#" class="header-cta-link me-md-4 me-2">فرصت های شغلی</a>
+                <button class="btn search-btn" type="button" data-bs-toggle="modal" data-bs-target="#searchModal"><i
+                        class="fa-light fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="breadcrumb">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">سحاب</a></li>
+                <li class="breadcrumb-item"><a href="#">راهکارها</a></li>
+                <li class="breadcrumb-item active" aria-current="page">سکان</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<main class="main-content">
+    <div class="container">
+        <div class="row intro-row align-items-center">
+            <div class="col-12 col-md-4 col-lg-3">
+                <div class="fe-padcast-image">
+                    <img src="assets/imgs/Sahab-Data-Mondays-S01-300x300.jpg" alt="" class="w-100">
+                </div>
+            </div>
+            <div class="col-12 col-md-8 col-lg-9">
+                <div class="fe-podcast-content">
+                    <h1>فصل اول</h1>
+                        <p>در اولین فصل از دوشنبه‌های دیتایی با ۸ نفر از متخصصین علوم داده و هوش مصنوعی گفتگو کرده‌ایم. همه قسمت‌ها را می‌توانید علاوه بر شنوتو و اپ‌های پادگیر از طریق همین صفحه نیز بشنوید.</p>
+                    <a href="#" class="sahab-btn secondary-bg">بازگشت به صفحه پادکست ها</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-10 mx-auto">
+                <div class="row podcast-row">
+                    <div class="col-12 col-sm-3">
+                        <div class="card-default-image">
+                            <img src="assets/imgs/SahabDataMondays-S01-E08-site-300x300.jpg" alt="" class="w-100">
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-9">
+                        <h3 class="podcast-title">فصل ۱ – قسمت ۸: داده‌محور کردن سازمان‌ها از آمریکا تا ایران  </h3>
+                        <p>در این قسمت میزبان هیرمند لشکری هستیم. آقای لشکری تجربه مدیریت بازاریابی الوپیک، مدیریت پروژه‌ی داده در دیجیکالا و مدیریت بازاریابی پلتفرم سکان را دارند.</p>
+                        <audio id="player" controls>
+                            <source src="assets/audio/let-it-go-12279.mp3" type="audio/mp3" />
+                            <source src="assets/audio/let-it-go-12279.mp3" type="audio/ogg" />
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>
